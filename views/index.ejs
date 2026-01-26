@@ -9,6 +9,7 @@
 <body>
 
   <h1><%= title %></h1>
+  <p>there is currently <%= characters.length %> characters created!</p>
 
   <form action="/characters" method="post">
     <label for="name">Name</label>
@@ -17,13 +18,25 @@
     <label for="type">Type</label>
     <select id="type" name="type" required>
       <option value="" disabled selected>Select a type</option>
-      <!-- INJECT DROP DOWN OPTIONS -->
+      <% types.forEach(t => { %>
+        <option value="<%=t%>"><%=t%></option>
+      <% }) %>
     </select>
 
     <label for="trait">Trait</label>
     <select id="trait" name="trait" required>
       <option value="" disabled selected>Select a trait</option>
-      <!-- INJECT DROP DOWN OPTIONS -->
+      <% traits.forEach(t => { %>
+        <option value="<%=t%>"><%=t%></option>
+      <% }) %>
+    </select>
+
+    <label for="Alignment">Alignment</label>
+    <select id="Alignment" name="Alignment" required>
+      <option value="" disabled selected>Select a alignment</option>
+      <% Alignment.forEach(t => { %>
+        <option value="<%=t%>"><%=t%></option>
+      <% }) %>
     </select>
 
     <button type="submit">Create Character</button>
@@ -40,6 +53,7 @@
           <th>Name</th>
           <th>Type</th>
           <th>Trait</th>
+          <th>Alignment</th>
         </tr>
       </thead>
       <tbody>
@@ -50,6 +64,7 @@
             </td>
             <td><%= c.type %></td>
             <td><%= c.trait %></td>
+            <td><%= c.Alignment %></td>
           </tr>
         <% }) %>
       </tbody>
