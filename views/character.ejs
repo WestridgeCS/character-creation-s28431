@@ -8,18 +8,27 @@
 
 </head>
 <body>
-
   <h1><%= character.name %></h1>
 
   <div class="card">
     <div class="row">
       <div class="label">Type</div>
-      <!-- <div class="value">INJECT DATA</div> -->
+      <%=character.type%>
     </div>
 
     <div class="row">
       <div class="label">Trait</div>
-      <!-- <div class="value">INJECT DATA</div> -->
+      <%=character.trait%>
+    </div>
+
+    <div class="row">
+      <div class="label">Alignment</div>
+      <%=character.Alignment%>
+    </div>
+
+    <div class="row">
+      <div class="label">Description</div>
+      <%=character.name%> is known to be a <%=character.trait%> <%=character.type%> with a <%=character.Alignment%> alignment!
     </div>
 
     <a class="button" href="/">← Back</a>
